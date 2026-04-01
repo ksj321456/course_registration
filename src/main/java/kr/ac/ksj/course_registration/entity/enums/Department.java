@@ -1,4 +1,4 @@
-package kr.ac.ksj.course_registration.entity;
+package kr.ac.ksj.course_registration.entity.enums;
 
 public enum Department {
 
