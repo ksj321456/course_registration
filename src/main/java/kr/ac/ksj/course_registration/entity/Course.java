@@ -10,6 +10,15 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(
+        name = "course",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_course_code",
+                        columnNames = {"course_code"}
+                )
+        }
+)
 public class Course {
 
     @Id
@@ -17,7 +26,7 @@ public class Course {
     @Column(name = "course_id")
     private Long courseId;
 
-    @Column(name = "course_code", nullable = false, unique = true)
+    @Column(name = "course_code", nullable = false)
     private String courseCode;
 
     @Column(name = "course_name", nullable = false)
