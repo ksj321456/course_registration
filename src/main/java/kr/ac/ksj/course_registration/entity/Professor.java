@@ -10,6 +10,19 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(
+        name = "professor",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_professor_email",
+                        columnNames = {"professor_email"}
+                ),
+                @UniqueConstraint(
+                        name = "uk_professor_phone",
+                        columnNames = {"professor_phone_number"}
+                )
+        }
+)
 public class Professor {
 
     @Id
@@ -20,7 +33,7 @@ public class Professor {
     @Column(name = "professor_name", nullable = false)
     private String professorName;
 
-    @Column(name = "professor_email", nullable = false, unique = true)
+    @Column(name = "professor_email", nullable = false)
     private String professorEmail;
 
     @Enumerated(EnumType.STRING)
@@ -30,7 +43,7 @@ public class Professor {
     @Column(name = "office", nullable = false)
     private String office;
 
-    @Column(name = "professor_phone_number", nullable = false, unique = true)
+    @Column(name = "professor_phone_number")
     private String phoneNumber;
 
     @Column(name = "created_at", nullable = false)

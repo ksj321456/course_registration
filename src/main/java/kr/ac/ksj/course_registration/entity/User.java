@@ -10,6 +10,12 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "user", uniqueConstraints = {
+        @UniqueConstraint(
+                name = "uk_user_phone_number",
+                columnNames = {"user_phone_number"}
+        )
+})
 public class User {
 
     @Id
@@ -26,7 +32,7 @@ public class User {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "user_phone_number", nullable = false, unique = true)
+    @Column(name = "user_phone_number", nullable = false)
     private String userPhoneNumber;
 
     @Enumerated(EnumType.STRING)
