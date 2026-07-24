@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>에러</title>
+</head>
+<body>
+
+<h1>에러 발생</h1>
+
+<div
+        th:text="${errorMessage}"
+        style="color:red">
+</div>
+
+<a th:href="@{/home}">
+    홈으로
+</a>
+
+</body>
+</html>
