@@ -12,6 +12,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Table(name = "course_schedule")
 public class CourseSchedule {
 
     @Id

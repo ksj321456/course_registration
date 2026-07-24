@@ -22,7 +22,7 @@ public class Professor {
     @Column(name = "professor_name", nullable = false)
     private String professorName;
 
-    @Column(name = "professor_email", nullable = false, unique = true)
+    @Column(name = "professor_email", nullable = false)
     private String professorEmail;
 
     @Enumerated(EnumType.STRING)
@@ -32,7 +32,7 @@ public class Professor {
     @Column(name = "office", nullable = false)
     private String office;
 
-    @Column(name = "professor_phone_number", nullable = false, unique = true)
+    @Column(name = "professor_phone_number")
     private String phoneNumber;
 
     @Column(name = "created_at", nullable = false)
