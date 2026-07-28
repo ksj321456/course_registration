@@ -9,7 +9,9 @@ import java.time.LocalTime;
 
 @Getter
 @AllArgsConstructor
-public class AddCourseRequestDto {
+public class RegistrationCourseRequestDto {
+
+    private String userName;
 
     private String courseCode;
 
@@ -37,4 +39,13 @@ public class AddCourseRequestDto {
 
     private String classroom;
 
+    private String professorName;
+
+    private String professorEmail;
+
+    private DAY courseDay;
+
+    private LocalTime courseStartTime;
+
+    private LocalTime courseEndTime;
 }

@@ -17,9 +17,9 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
-    public String handleIllegalArgument(IllegalArgumentException e, Model model) {
-        model.addAttribute("errorMessage", e);
-        return "error";
+    public ResponseEntity<?> handleIllegalArgument(IllegalArgumentException e) {
+
+        return ResponseEntity.badRequest().body("예외 발생");
     }
 
     // JSON Valid 실패 시 예외 처리

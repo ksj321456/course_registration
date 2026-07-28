@@ -2,6 +2,8 @@ package kr.ac.ksj.course_registration.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -9,6 +11,8 @@ import java.time.LocalDateTime;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@Getter
 public class CourseSection {
 
     @Id
@@ -25,6 +29,8 @@ public class CourseSection {
     @Column(name = "capacity", nullable = false)
     private String capacity;
 
+    // @Builder가 쓰이고 초깃값이 설정되어 있을 때
+    @Builder.Default
     @Column(name = "enrolled_count", nullable = false)
     private int enrolledCount = 0;
 
