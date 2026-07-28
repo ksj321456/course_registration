@@ -30,7 +30,7 @@ public class User {
     @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(name = "user_phone_number", nullable = false, unique = true)
+    @Column(name = "user_phone_number", nullable = false)
     private String userPhoneNumber;
 
     @Enumerated(EnumType.STRING)
