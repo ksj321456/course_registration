@@ -2,6 +2,7 @@ package kr.ac.ksj.course_registration.controller;
 
 import jakarta.validation.Valid;
 import kr.ac.ksj.course_registration.entity.Professor;
+import kr.ac.ksj.course_registration.request_dto.RegistrationCourseRequestDto;
 import kr.ac.ksj.course_registration.request_dto.RegistrationProfessorRequestDto;
 import kr.ac.ksj.course_registration.service.RegistrationService;
 import lombok.RequiredArgsConstructor;
@@ -26,5 +27,13 @@ public class RegistrationController {
 
         // 저장된 내용 클라이언트에 반환
         return ResponseEntity.ok().body(dto);
+    }
+
+    @PostMapping("/course")
+    public ResponseEntity<?> registrationCourse(@RequestBody @Valid RegistrationCourseRequestDto registrationCourseRequestDto) {
+
+        Long id = registrationService.registrationCourseService(registrationCourseRequestDto);
+
+        return ResponseEntity.ok().body(id);
     }
 }

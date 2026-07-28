@@ -3,6 +3,7 @@ package kr.ac.ksj.course_registration.entity;
 import jakarta.persistence.*;
 import kr.ac.ksj.course_registration.entity.enums.DAY;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +13,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "course_schedule")
+@Builder
 public class CourseSchedule {
 
     @Id
